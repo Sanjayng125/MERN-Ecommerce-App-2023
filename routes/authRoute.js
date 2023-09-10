@@ -8,7 +8,6 @@ import {
   getOrdersController,
   getAllOrdersController,
   orderStatusController,
-  getAllUsersController,
 } from "../controllers/authController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 
@@ -54,8 +53,5 @@ router.put(
   isAdmin,
   orderStatusController
 );
-
-// get all users
-router.get("/all-users", requireSignIn, isAdmin, getAllUsersController);
 
 export default router;
